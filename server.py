@@ -3,9 +3,11 @@ import requests
 
 app = Flask(__name__)
 
-BOT_TOKEN = "PUT_BOT_TOKEN_HERE"
+# معلومات البوت
+BOT_TOKEN = "8594021815:AAGnCeQlSpK3urvQVbzzMdJXYX73t7nD-K8"
 OWNER = 6001517585
 
+# استقبال رسائل SMS من Twilio
 @app.route("/sms", methods=["POST"])
 def sms():
 
@@ -31,10 +33,10 @@ def sms():
 
     return "OK"
 
-
+# الصفحة الرئيسية للسيرفر
 @app.route("/")
 def home():
     return "SMS BOT RUNNING"
 
-
+# تشغيل السيرفر
 app.run(host="0.0.0.0", port=10000)
